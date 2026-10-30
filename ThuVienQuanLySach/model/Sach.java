@@ -33,6 +33,7 @@ public class Sach {
         System.out.println("Nam xuat ban: " + namXuatBan);
         System.out.println("Đon gia: " + donGia);
         System.out.println("So luo  ng: " + soLuong);
+        
     }
     // Bài 2: Tính thành tiền = đơn giá * số lượng
     public double tinhThanhTien() {
@@ -53,5 +54,17 @@ public class Sach {
         boolean namHopLe = this.namXuatBan > 0 && this.namXuatBan <= 2026;
 
         return giaHopLe && soLuongHopLe && namHopLe;
+    }
+    // Tuần 4 - Bài 2: Phân loại giá sách
+    public String phanLoaiGia() {
+        if (this.donGia < 50000) {
+            return "Sách giá thấp";
+        } else if (this.donGia <= 100000) {
+            return "Sách giá trung bình";
+        } else if (this.donGia <= 200000) {
+            return "Sách giá cao";
+        } else {
+            return "Sách giá đặc biệt";
+        }
     }
 }

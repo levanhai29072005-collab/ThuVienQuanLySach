@@ -13,5 +13,11 @@ public class Main {
         sc.close();
         System.out.println("Phí vận chuyển (5%): " + sach.tinhPhiVanChuyen());
         System.out.println("Tổng tiền nhập kho: " + sach.tinhTongTienNhap());
+        System.out.println("\n=== TUẦN 4 - BÀI 1: KIỂM TRA HỢP LỆ ===");
+        if (sach.kiemTraHopLe()) {
+            System.out.println("Thông tin sách hợp lệ!");
+        } else {
+            System.out.println("Thông tin sách KHÔNG hợp lệ (kiểm tra lại giá, số lượng hoặc năm XB)!");
+        }
     }
 }
