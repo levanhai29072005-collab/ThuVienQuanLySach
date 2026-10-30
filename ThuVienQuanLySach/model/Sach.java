@@ -7,7 +7,7 @@ public class Sach {
     private String tenSach;
     private String tacGia;
     private int namXuatBan;
-    private double donGia;
+    private double donGia;  
     private int soLuong;
     public Sach() {}
     public void nhapThongTin(Scanner sc) {
@@ -32,7 +32,7 @@ public class Sach {
         System.out.println("Tac gia: " + tacGia);
         System.out.println("Nam xuat ban: " + namXuatBan);
         System.out.println("Đon gia: " + donGia);
-        System.out.println("So luong: " + soLuong);
+        System.out.println("So luo  ng: " + soLuong);
     }
     // Bài 2: Tính thành tiền = đơn giá * số lượng
     public double tinhThanhTien() {
