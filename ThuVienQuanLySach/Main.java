@@ -23,6 +23,8 @@ public class Main {
         System.out.println("Mức giá: " + sach.phanLoaiGia());
         System.out.println("\n=== TUẦN 4 - BÀI 3: PHÂN LOẠI TỒN KHO ===");
         System.out.println("Tình trạng kho: " + sach.phanLoaiTonKho());
+        System.out.println("\n=== THỂ LOẠI SÁCH (BÀI 4) ===");
+        System.out.println("Loại sách đã chọn: " + sach.layTenLoaiSach());
     }
     
 }

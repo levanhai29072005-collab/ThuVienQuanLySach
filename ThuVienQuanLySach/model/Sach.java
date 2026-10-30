@@ -9,6 +9,7 @@ public class Sach {
     private int namXuatBan;
     private double donGia;  
     private int soLuong;
+    private int loaiSach;
     public Sach() {}
     public void nhapThongTin(Scanner sc) {
         System.out.print("Nhap ma sach: ");
@@ -32,7 +33,16 @@ public class Sach {
         System.out.println("Tac gia: " + tacGia);
         System.out.println("Nam xuat ban: " + namXuatBan);
         System.out.println("Đon gia: " + donGia);
-        System.out.println("So luo  ng: " + soLuong);
+        System.out.println("So luong: " + soLuong);
+        System.out.println("Loại sách: " + layTenLoaiSach());
+        System.out.println("--- Chọn loại sách ---");
+        System.out.println("1. Sách giáo khoa");
+        System.out.println("2. Sách tham khảo");
+        System.out.println("3. Sách chuyên ngành");
+        System.out.println("4. Sách khác");
+        System.out.print("Vui lòng nhập lựa chọn (1-4): ");
+
+        this.loaiSach = Integer.parseInt(sc.nextLine());
         
     }
     // Bài 2: Tính thành tiền = đơn giá * số lượng
@@ -79,4 +89,20 @@ public class Sach {
             return "Còn nhiều";
         }
     }
+// Tuần 4 - Bài 4: Xử lý bằng switch chọn loại sách
+public String layTenLoaiSach() {
+    switch (this.loaiSach) {
+        case 1:
+            return "Sách giáo khoa";
+        case 2:
+            return "Sách tham khảo";
+        case 3:
+            return "Sách chuyên ngành";
+        case 4:
+            return "Sách khác";
+        default:
+            return "Loại sách không hợp lệ";
+    }
+}
+
 }
