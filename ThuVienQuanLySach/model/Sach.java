@@ -11,28 +11,28 @@ public class Sach {
     private int soLuong;
     public Sach() {}
     public void nhapThongTin(Scanner sc) {
-        System.out.print("Nhập mã sách: ");
+        System.out.print("Nhap ma sach: ");
         this.maSach = sc.nextLine();
-        System.out.print("Nhập tên sách: ");
+        System.out.print("Nhap ten sachh: ");
         this.tenSach = sc.nextLine();
-        System.out.print("Nhập tác giả: ");
+        System.out.print("Nhap tac gia: ");
         this.tacGia = sc.nextLine();
-        System.out.print("Nhập năm xuất bản: ");
+        System.out.print("Nhap nam xuat ban: ");
         this.namXuatBan = Integer.parseInt(sc.nextLine());
-        System.out.print("Nhập đơn giá: ");
+        System.out.print("Nhập đon gia: ");
         this.donGia = Double.parseDouble(sc.nextLine());
-        System.out.print("Nhập số lượng: ");
+        System.out.print("Nhap so luong: ");
         this.soLuong = Integer.parseInt(sc.nextLine());
     }
 
     public void hienThiThongTin() {
         System.out.println("----- THÔNG TIN SÁCH -----");
-        System.out.println("Mã sách: " + maSach);
-        System.out.println("Tên sách: " + tenSach);
-        System.out.println("Tác giả: " + tacGia);
-        System.out.println("Năm xuất bản: " + namXuatBan);
-        System.out.println("Đơn giá: " + donGia);
-        System.out.println("Số lượng: " + soLuong);
+        System.out.println("Ma sach: " + maSach);
+        System.out.println("Ten sach: " + tenSach);
+        System.out.println("Tac gia: " + tacGia);
+        System.out.println("Nam xuat ban: " + namXuatBan);
+        System.out.println("Đon gia: " + donGia);
+        System.out.println("So luong: " + soLuong);
     }
     // Bài 2: Tính thành tiền = đơn giá * số lượng
     public double tinhThanhTien() {
