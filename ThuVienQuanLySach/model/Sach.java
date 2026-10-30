@@ -46,4 +46,12 @@ public class Sach {
     public double tinhTongTienNhap() {
         return tinhThanhTien() + tinhPhiVanChuyen();
     }
+    // Tuần 4 - Bài 1: Kiểm tra tính hợp lệ của dữ liệu
+    public boolean kiemTraHopLe() {
+        boolean giaHopLe = this.donGia > 0;
+        boolean soLuongHopLe = this.soLuong >= 0;
+        boolean namHopLe = this.namXuatBan > 0 && this.namXuatBan <= 2026;
+
+        return giaHopLe && soLuongHopLe && namHopLe;
+    }
 }
