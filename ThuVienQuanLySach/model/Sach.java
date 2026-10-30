@@ -67,4 +67,16 @@ public class Sach {
             return "Sách giá đặc biệt";
         }
     }
+    // Tuần 4 - Bài 3: Phân loại tồn kho
+    public String phanLoaiTonKho() {
+        if (this.soLuong == 0) {
+            return "Hết sách";
+        } else if (this.soLuong <= 5) {
+            return "Sắp hết";
+        } else if (this.soLuong <= 20) {
+            return "Còn ít";
+        } else {
+            return "Còn nhiều";
+        }
+    }
 }

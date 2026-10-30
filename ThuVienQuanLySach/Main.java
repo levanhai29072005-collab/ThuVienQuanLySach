@@ -19,5 +19,10 @@ public class Main {
         } else {
             System.out.println("Thông tin sách KHÔNG hợp lệ (kiểm tra lại giá, số lượng hoặc năm XB)!");
         }
+        System.out.println("\n=== TUẦN 4 - BÀI 2: PHÂN LOẠI GIÁ ===");
+        System.out.println("Mức giá: " + sach.phanLoaiGia());
+        System.out.println("\n=== TUẦN 4 - BÀI 3: PHÂN LOẠI TỒN KHO ===");
+        System.out.println("Tình trạng kho: " + sach.phanLoaiTonKho());
     }
+    
 }
