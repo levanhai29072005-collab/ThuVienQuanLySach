@@ -113,4 +113,12 @@ public class Sach {
                 return "Loại sách không hợp lệ";
         }
     }
+    // Thêm getter phục vụ tính toán và tìm kiếm cho Tuần 5
+    public String getMaSach() {
+        return this.maSach;
+    }
+
+    public int getSoLuong() {
+        return this.soLuong;
+    }
 }
