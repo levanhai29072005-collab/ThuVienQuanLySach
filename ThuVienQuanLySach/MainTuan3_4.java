@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import model.Sach;
 
-public class Main {
+public class MainTuan3_4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Sach sach = new Sach();
