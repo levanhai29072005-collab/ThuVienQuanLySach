@@ -3,28 +3,31 @@ import model.Sach;
 
 public class MainTuan3_4 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Sach sach = new Sach();
+        try (Scanner sc = new Scanner(System.in)) {
+            Sach sach = new Sach();
 
-        System.out.println("=== NHẬP THÔNG TIN SÁCH ===");
-        sach.nhapThongTin(sc);
-        sach.hienThiThongTin();
-        System.out.println("Thành tiền: " + sach.tinhThanhTien());
-        sc.close();
-        System.out.println("Phí vận chuyển (5%): " + sach.tinhPhiVanChuyen());
-        System.out.println("Tổng tiền nhập kho: " + sach.tinhTongTienNhap());
-        System.out.println("\n=== TUẦN 4 - BÀI 1: KIỂM TRA HỢP LỆ ===");
-        if (sach.kiemTraHopLe()) {
-            System.out.println("Thông tin sách hợp lệ!");
-        } else {
-            System.out.println("Thông tin sách KHÔNG hợp lệ (kiểm tra lại giá, số lượng hoặc năm XB)!");
+            System.out.println("=== NHAP THONG TIN SACH ===");
+            sach.nhapThongTin(sc);
+            sach.hienThiThongTin();
+            System.out.println("Thanh tien: " + sach.tinhThanhTien());
+            System.out.println("Phi van chuyen (5%): " + sach.tinhPhiVanChuyen());
+            System.out.println("Tong tien nhap kho: " + sach.tinhTongTienNhap());
+
+            System.out.println("\n=== TUAN 4 - BAI 1: KIEM TRA HOP LE ===");
+            if (sach.kiemTraHopLe()) {
+                System.out.println("Thong tin sach hop le!");
+            } else {
+                System.out.println("Thong tin sach KHONG hop le (kiem tra lai gia, so luong hoac nam XB)!");
+            }
+
+            System.out.println("\n=== TUAN 4 - BAI 2: PHAN LOAI GIA ===");
+            System.out.println("Muc gia: " + sach.phanLoaiGia());
+
+            System.out.println("\n=== TUAN 4 - BAI 3: PHAN LOAI TON KHO ===");
+            System.out.println("Tinh trang kho: " + sach.phanLoaiTonKho());
+
+            System.out.println("\n=== THE LOAI SACH (BAI 4) ===");
+            System.out.println("Loai sach da chon: " + sach.layTenLoaiSach());
         }
-        System.out.println("\n=== TUẦN 4 - BÀI 2: PHÂN LOẠI GIÁ ===");
-        System.out.println("Mức giá: " + sach.phanLoaiGia());
-        System.out.println("\n=== TUẦN 4 - BÀI 3: PHÂN LOẠI TỒN KHO ===");
-        System.out.println("Tình trạng kho: " + sach.phanLoaiTonKho());
-        System.out.println("\n=== THỂ LOẠI SÁCH (BÀI 4) ===");
-        System.out.println("Loại sách đã chọn: " + sach.layTenLoaiSach());
     }
-    
 }

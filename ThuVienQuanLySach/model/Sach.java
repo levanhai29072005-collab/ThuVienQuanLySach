@@ -22,28 +22,27 @@ public class Sach {
         this.tacGia = sc.nextLine();
         System.out.print("Nhap nam xuat ban: ");
         this.namXuatBan = Integer.parseInt(sc.nextLine());
-        System.out.print("Nhap đon gia: ");
+        System.out.print("Nhap don gia: ");
         this.donGia = Double.parseDouble(sc.nextLine());
         System.out.print("Nhap so luong: ");
         this.soLuong = Integer.parseInt(sc.nextLine());
 
-        // Nhập loại sách đúng vị trí
-        System.out.println("--- Chọn loại sách ---");
-        System.out.println("1. Sách giáo khoa");
-        System.out.println("2. Sách tham khảo");
-        System.out.println("3. Sách chuyên ngành");
-        System.out.println("4. Sách khác");
-        System.out.print("Vui lòng nhập lựa chọn (1-4): ");
+        System.out.println("--- Chon loai sach ---");
+        System.out.println("1. Sach giao khoa");
+        System.out.println("2. Sach tham khao");
+        System.out.println("3. Sach chuyen nganh");
+        System.out.println("4. Sach khac");
+        System.out.print("Vui long nhap lua chon (1-4): ");
         this.loaiSach = Integer.parseInt(sc.nextLine());
     }
 
     public void hienThiThongTin() {
-        System.out.println("\n----- THÔNG TIN SÁCH -----");
+        System.out.println("\n----- THONG TIN SACH -----");
         System.out.println("Ma sach: " + maSach);
         System.out.println("Ten sach: " + tenSach);
         System.out.println("Tac gia: " + tacGia);
         System.out.println("Nam xuat ban: " + namXuatBan);
-        System.out.println("Đon gia: " + donGia);
+        System.out.println("Don gia: " + donGia);
         System.out.println("So luong: " + soLuong);
         System.out.println("Loai sach: " + layTenLoaiSach());
     }
@@ -75,26 +74,26 @@ public class Sach {
     // Tuần 4 - Bài 2: Phân loại giá sách
     public String phanLoaiGia() {
         if (this.donGia < 50000) {
-            return "Sách giá thấp";
+            return "Sach gia thap";
         } else if (this.donGia <= 100000) {
-            return "Sách giá trung bình";
+            return "Sach gia trung binh";
         } else if (this.donGia <= 200000) {
-            return "Sách giá cao";
+            return "Sach gia cao";
         } else {
-            return "Sách giá đặc biệt";
+            return "Sach gia dac biet";
         }
     }
 
     // Tuần 4 - Bài 3: Phân loại tồn kho
     public String phanLoaiTonKho() {
         if (this.soLuong == 0) {
-            return "Hết sách";
+            return "Het sach";
         } else if (this.soLuong <= 5) {
-            return "Sắp hết";
+            return "Sap het";
         } else if (this.soLuong <= 20) {
-            return "Còn ít";
+            return "Con it";
         } else {
-            return "Còn nhiều";
+            return "Con nhieu";
         }
     }
 
@@ -102,18 +101,18 @@ public class Sach {
     public String layTenLoaiSach() {
         switch (this.loaiSach) {
             case 1:
-                return "Sách giáo khoa";
+                return "Sach giao khoa";
             case 2:
-                return "Sách tham khảo";
+                return "Sach tham khao";
             case 3:
-                return "Sách chuyên ngành";
+                return "Sach chuyen nganh";
             case 4:
-                return "Sách khác";
+                return "Sach khac";
             default:
-                return "Loại sách không hợp lệ";
+                return "Loai sach khong hop le";
         }
     }
-    // Thêm getter phục vụ tính toán và tìm kiếm cho Tuần 5
+
     public String getMaSach() {
         return this.maSach;
     }
