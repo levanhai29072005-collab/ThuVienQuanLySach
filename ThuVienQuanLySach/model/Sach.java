@@ -98,19 +98,15 @@ public class Sach {
     }
 
     // Tuần 4 - Bài 4: Xử lý bằng switch chọn loại sách
+    // Tuần 4 - Bài 4: Xử lý bằng rule switch chọn loại sách
     public String layTenLoaiSach() {
-        switch (this.loaiSach) {
-            case 1:
-                return "Sach giao khoa";
-            case 2:
-                return "Sach tham khao";
-            case 3:
-                return "Sach chuyen nganh";
-            case 4:
-                return "Sach khac";
-            default:
-                return "Loai sach khong hop le";
-        }
+        return switch (this.loaiSach) {
+            case 1 -> "Sach giao khoa";
+            case 2 -> "Sach tham khao";
+            case 3 -> "Sach chuyen nganh";
+            case 4 -> "Sach khac";
+            default -> "Loai sach khong hop le";
+        };
     }
 
     public String getMaSach() {
