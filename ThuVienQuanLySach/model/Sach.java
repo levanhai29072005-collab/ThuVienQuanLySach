@@ -4,20 +4,29 @@ import java.util.Scanner;
 
 public class Sach {
     private String maSach;
-    private String tenSach;
+    private String tieuDe; // Bổ sung theo yêu cầu Tuần 7 (tương đương tên sách)
     private String tacGia;
     private int namXuatBan;
-    private double donGia;  
+    private double donGia;
     private int soLuong;
     private int loaiSach;
 
     public Sach() {}
 
+    // Constructor dùng cho Tuần 7 (5 thuộc tính cơ bản)
+    public Sach(String maSach, String tieuDe, String tacGia, int namXuatBan, int soLuong) {
+        this.maSach = maSach;
+        this.tieuDe = tieuDe;
+        this.tacGia = tacGia;
+        this.namXuatBan = namXuatBan;
+        this.soLuong = soLuong;
+    }
+
     public void nhapThongTin(Scanner sc) {
         System.out.print("Nhap ma sach: ");
         this.maSach = sc.nextLine();
-        System.out.print("Nhap ten sach: ");
-        this.tenSach = sc.nextLine();
+        System.out.print("Nhap tieu de (ten sach): ");
+        this.tieuDe = sc.nextLine();
         System.out.print("Nhap tac gia: ");
         this.tacGia = sc.nextLine();
         System.out.print("Nhap nam xuat ban: ");
@@ -36,69 +45,64 @@ public class Sach {
         this.loaiSach = Integer.parseInt(sc.nextLine());
     }
 
+    // Phương thức nhập nhanh 5 thuộc tính cơ bản cho Tuần 7 & 8
+    public void nhapThongTinCoBan(Scanner sc) {
+        System.out.print("Nhap ma sach: ");
+        this.maSach = sc.nextLine();
+        System.out.print("Nhap tieu de sach: ");
+        this.tieuDe = sc.nextLine();
+        System.out.print("Nhap tac gia: ");
+        this.tacGia = sc.nextLine();
+        System.out.print("Nhap nam xuat ban: ");
+        this.namXuatBan = Integer.parseInt(sc.nextLine());
+        System.out.print("Nhap so luong: ");
+        this.soLuong = Integer.parseInt(sc.nextLine());
+    }
+
     public void hienThiThongTin() {
         System.out.println("\n----- THONG TIN SACH -----");
         System.out.println("Ma sach: " + maSach);
-        System.out.println("Ten sach: " + tenSach);
+        System.out.println("Tieu de: " + tieuDe);
         System.out.println("Tac gia: " + tacGia);
         System.out.println("Nam xuat ban: " + namXuatBan);
-        System.out.println("Don gia: " + donGia);
         System.out.println("So luong: " + soLuong);
-        System.out.println("Loai sach: " + layTenLoaiSach());
+        if (donGia > 0) {
+            System.out.println("Don gia: " + donGia);
+            System.out.println("Loai sach: " + layTenLoaiSach());
+        }
     }
 
-    // Tuần 3 - Bài 2: Tính thành tiền = đơn giá * số lượng
+    // --- Các phương thức từ Tuần 3 & 4 (giữ nguyên để tương thích) ---
     public double tinhThanhTien() {
         return this.donGia * this.soLuong;
     }
 
-    // Tuần 3 - Bài 3: Phí vận chuyển = 5% giá trị sách
     public double tinhPhiVanChuyen() {
         return tinhThanhTien() * 0.05;
     }
 
-    // Tuần 3 - Bài 4: Tổng tiền nhập = Thành tiền + Phí vận chuyển
     public double tinhTongTienNhap() {
         return tinhThanhTien() + tinhPhiVanChuyen();
     }
 
-    // Tuần 4 - Bài 1: Kiểm tra tính hợp lệ của dữ liệu
     public boolean kiemTraHopLe() {
-        boolean giaHopLe = this.donGia > 0;
-        boolean soLuongHopLe = this.soLuong >= 0;
-        boolean namHopLe = this.namXuatBan > 0 && this.namXuatBan <= 2026;
-
-        return giaHopLe && soLuongHopLe && namHopLe;
+        return this.donGia > 0 && this.soLuong >= 0 && this.namXuatBan > 0 && this.namXuatBan <= 2026;
     }
 
-    // Tuần 4 - Bài 2: Phân loại giá sách
     public String phanLoaiGia() {
-        if (this.donGia < 50000) {
-            return "Sach gia thap";
-        } else if (this.donGia <= 100000) {
-            return "Sach gia trung binh";
-        } else if (this.donGia <= 200000) {
-            return "Sach gia cao";
-        } else {
-            return "Sach gia dac biet";
-        }
+        if (this.donGia < 50000) return "Sach gia thap";
+        if (this.donGia <= 100000) return "Sach gia trung binh";
+        if (this.donGia <= 200000) return "Sach gia cao";
+        return "Sach gia dac biet";
     }
 
-    // Tuần 4 - Bài 3: Phân loại tồn kho
     public String phanLoaiTonKho() {
-        if (this.soLuong == 0) {
-            return "Het sach";
-        } else if (this.soLuong <= 5) {
-            return "Sap het";
-        } else if (this.soLuong <= 20) {
-            return "Con it";
-        } else {
-            return "Con nhieu";
-        }
+        if (this.soLuong == 0) return "Het sach";
+        if (this.soLuong <= 5) return "Sap het";
+        if (this.soLuong <= 20) return "Con it";
+        return "Con nhieu";
     }
 
-    // Tuần 4 - Bài 4: Xử lý bằng switch chọn loại sách
-    // Tuần 4 - Bài 4: Xử lý bằng rule switch chọn loại sách
     public String layTenLoaiSach() {
         return switch (this.loaiSach) {
             case 1 -> "Sach giao khoa";
